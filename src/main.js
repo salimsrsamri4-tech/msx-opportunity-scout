@@ -6,6 +6,7 @@ import { fetchFinancialResults, sleep } from "./msxApi.js";
 import { loadHistory, saveHistory, appendSnapshotToHistory, getPriorEntries } from "./store.js";
 import { evaluateTechnicalOpportunities, evaluateFinancialOpportunities } from "./rules.js";
 import { sendTelegramMessage } from "./notify.js";
+import { sendEmail } from "./notifyEmail.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const HISTORY_PATH = path.join(__dirname, "..", "data", "history.json");
@@ -92,13 +93,35 @@ async function main() {
   const report = formatReport(technical, financial, failures);
   console.log("\n" + report);
 
+  let sent = false;
+
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (botToken && chatId) {
     await sendTelegramMessage(botToken, chatId, report);
     console.log("\nتم إرسال التقرير عبر تيليجرام.");
-  } else {
-    console.log("\n(لم يتم الإرسال عبر تيليجرام: TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID غير مضبوطين)");
+    sent = true;
+  }
+
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_PASS;
+  const emailTo = process.env.EMAIL_TO || emailUser;
+  if (emailUser && emailPass) {
+    await sendEmail({
+      user: emailUser,
+      pass: emailPass,
+      to: emailTo,
+      subject: `رصد فرص بورصة مسقط - ${today}`,
+      text: report,
+    });
+    console.log("\nتم إرسال التقرير عبر البريد الإلكتروني.");
+    sent = true;
+  }
+
+  if (!sent) {
+    console.log(
+      "\n(لم يتم إرسال التقرير: لم تُضبط بيانات تيليجرام (TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID) ولا البريد الإلكتروني (EMAIL_USER/EMAIL_PASS))"
+    );
   }
 }
 

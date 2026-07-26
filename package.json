@@ -9,5 +9,8 @@
   },
   "scripts": {
     "start": "node src/main.js"
+  },
+  "dependencies": {
+    "nodemailer": "^9.0.3"
   }
 }
