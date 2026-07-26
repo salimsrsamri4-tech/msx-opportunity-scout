@@ -3,13 +3,24 @@ import { fileURLToPath } from "node:url";
 import { getActiveCompanies } from "./companies.js";
 import { getSnapshot } from "./snapshot.js";
 import { fetchFinancialResults, sleep } from "./msxApi.js";
-import { loadHistory, saveHistory, appendSnapshotToHistory, getPriorEntries } from "./store.js";
+import {
+  loadHistory,
+  saveHistory,
+  appendSnapshotToHistory,
+  getPriorEntries,
+  saveCompaniesSnapshot,
+  appendOpportunitiesLog,
+  saveMeta,
+} from "./store.js";
 import { evaluateTechnicalOpportunities, evaluateFinancialOpportunities } from "./rules.js";
 import { sendTelegramMessage } from "./notify.js";
 import { sendEmail } from "./notifyEmail.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const HISTORY_PATH = path.join(__dirname, "..", "data", "history.json");
+const COMPANIES_PATH = path.join(__dirname, "..", "data", "companies.json");
+const OPPORTUNITIES_PATH = path.join(__dirname, "..", "data", "opportunities.json");
+const META_PATH = path.join(__dirname, "..", "data", "meta.json");
 const REQUEST_DELAY_MS = 300; // تهدئة معدل الطلبات تجاه موقع البورصة
 
 function todayMuscatDate() {
@@ -74,6 +85,7 @@ async function main() {
 
   const companies = await getActiveCompanies();
   console.log(`عدد الشركات المدرجة النشطة: ${companies.length}`);
+  saveCompaniesSnapshot(COMPANIES_PATH, companies);
 
   const { opportunities: technical, failures } = await collectSnapshotsAndTechnicalOpportunities(
     companies,
@@ -89,6 +101,13 @@ async function main() {
   } catch (err) {
     console.warn("تعذّر جلب النتائج المالية:", err.message);
   }
+
+  appendOpportunitiesLog(OPPORTUNITIES_PATH, today, [...technical, ...financial]);
+  saveMeta(META_PATH, {
+    lastRunDate: today,
+    lastRunAt: new Date().toISOString(),
+    activeCompanyCount: companies.length,
+  });
 
   const report = formatReport(technical, financial, failures);
   console.log("\n" + report);

@@ -1,0 +1,692 @@
+{
+  "CMII": {
+    "nameAr": "صناعة مواد البناء",
+    "nameEn": "CONSTRUCTION MATERIAL INDUSTRIES",
+    "market": "2",
+    "sector": "3"
+  },
+  "AACT": {
+    "nameAr": "الأنوار لبـلاط السـيراميك",
+    "nameEn": "AL ANWAR  CERAMIC",
+    "market": "2",
+    "sector": "3"
+  },
+  "ABHS": {
+    "nameAr": "فندق البريمي (قيد التصفية )",
+    "nameEn": "AL BURAIMI HOTEL ( Under Liquidation )",
+    "market": "3",
+    "sector": "5"
+  },
+  "ABOB": {
+    "nameAr": "البنك  الأهلي",
+    "nameEn": "AHLI BANK",
+    "market": "2",
+    "sector": "1"
+  },
+  "AFAI": {
+    "nameAr": "الفجر العالمية",
+    "nameEn": "ALFAJAR ALAMIA",
+    "market": "2",
+    "sector": "3"
+  },
+  "AFIC": {
+    "nameAr": "التأمين العربية فالكون",
+    "nameEn": "ARABIA FALCON INSURANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "DTCS": {
+    "nameAr": "ظفار للسـياحة",
+    "nameEn": "DHOFAR TOURISM",
+    "market": "2",
+    "sector": "5"
+  },
+  "GHOS": {
+    "nameAr": "فنادق الخليج-عمان",
+    "nameEn": "GULF HOTELS (OM)",
+    "market": "2",
+    "sector": "5"
+  },
+  "HMCI": {
+    "nameAr": "العالمية لإدارة الفنادق",
+    "nameEn": "HOTELS MANAGEMENT COMPANY INTERNATIONAL",
+    "market": "2",
+    "sector": "5"
+  },
+  "MCTI": {
+    "nameAr": "مسقط للتأمين",
+    "nameEn": "MUSCAT INSURANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "NBII": {
+    "nameAr": "الوطنية لصناعة البسكويت",
+    "nameEn": "NATIONAL BISCUIT INDUSTRIES LIMITED",
+    "market": "2",
+    "sector": "3"
+  },
+  "NRED": {
+    "nameAr": "الوطنية للتطوير العقاري",
+    "nameEn": "NATIONAL REAL ESTATE DEVELOPMENT & INVESTMENTS",
+    "market": "2",
+    "sector": "1"
+  },
+  "OCCI": {
+    "nameAr": "الكروم العمانية",
+    "nameEn": "OMAN CHROMITE",
+    "market": "2",
+    "sector": "3"
+  },
+  "SAHS": {
+    "nameAr": "ضيافة الصحراء",
+    "nameEn": "SAHARA HOSPITALITY",
+    "market": "2",
+    "sector": "5"
+  },
+  "AJSS": {
+    "nameAr": "الجزيرة للخدمات",
+    "nameEn": "ALJAZEERA SERVICES",
+    "market": "1",
+    "sector": "5"
+  },
+  "AMAT": {
+    "nameAr": "المدينة تكافل",
+    "nameEn": "MADINA TAKAFUL",
+    "market": "1",
+    "sector": "1"
+  },
+  "AMII": {
+    "nameAr": "المدينة للاستثمار القابضة",
+    "nameEn": "AL MADINA INVESTMENT HOLDING",
+    "market": "2",
+    "sector": "1"
+  },
+  "AOFS": {
+    "nameAr": "العمانية لخدمات التمويل",
+    "nameEn": "AL OMANIYA FINANCIAL SERVICES",
+    "market": "1",
+    "sector": "1"
+  },
+  "BWPC": {
+    "nameAr": "بركاء للمياه والطاقة",
+    "nameEn": "BARKA WATER AND POWER",
+    "market": "1",
+    "sector": "5"
+  },
+  "BACS": {
+    "nameAr": "كلية مـجان",
+    "nameEn": "MAJAN COLLEGE",
+    "market": "2",
+    "sector": "5"
+  },
+  "BATP": {
+    "nameAr": "الباطنة للطاقة",
+    "nameEn": "ALBATINAH POWER",
+    "market": "1",
+    "sector": "5"
+  },
+  "BKDB": {
+    "nameAr": "بنك ظفار",
+    "nameEn": "BANK DHOFAR",
+    "market": "1",
+    "sector": "1"
+  },
+  "BKNZ": {
+    "nameAr": "بنك نزوى",
+    "nameEn": "BANK NIZWA",
+    "market": "1",
+    "sector": "1"
+  },
+  "DBCI": {
+    "nameAr": "ظفار للمرطبات والمواد الغذائية",
+    "nameEn": "DHOFAR BEVERAGES",
+    "market": "2",
+    "sector": "3"
+  },
+  "ATMI": {
+    "nameAr": "الجزيرة للمنتجات الحديدية",
+    "nameEn": "JAZEERA STEEL PRODUCTS",
+    "market": "1",
+    "sector": "3"
+  },
+  "DBIH": {
+    "nameAr": "الباطنة للتنمية والاستثمار",
+    "nameEn": "AL BATINAH DEVELOPMENT & INVESTMENT HO.",
+    "market": "3",
+    "sector": "1"
+  },
+  "DFIN": {
+    "nameAr": "ظفار للأغذية والاستثمار",
+    "nameEn": "DHOFAR FOODS AND INVESTMENT",
+    "market": "2",
+    "sector": "3"
+  },
+  "DGEN": {
+    "nameAr": "ظفار لتوليد الكهرباء",
+    "nameEn": "DHOFAR GENERATING",
+    "market": "2",
+    "sector": "5"
+  },
+  "DICS": {
+    "nameAr": "ظفار للتأمين",
+    "nameEn": "DHOFAR INSURANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "DIDI": {
+    "nameAr": "ظفار الدولية للتنمية والاستثمار",
+    "nameEn": "DHOFAR  INTERNATIONAL DEVELOPMENT & INVESTMENT",
+    "market": "1",
+    "sector": "1"
+  },
+  "FINC": {
+    "nameAr": "المركز المالي",
+    "nameEn": "FINANCIAL CORPORATION",
+    "market": "2",
+    "sector": "1"
+  },
+  "GECS": {
+    "nameAr": "جلفار للهندسة والمقاولات",
+    "nameEn": "GALFAR ENGINEERING & CONTRACTING",
+    "market": "2",
+    "sector": "3"
+  },
+  "GFIC": {
+    "nameAr": "الدولية للاستثمارات المالية القابضة",
+    "nameEn": "GLOBAL FINANCIAL INVESTMENT HO.",
+    "market": "1",
+    "sector": "1"
+  },
+  "GICI": {
+    "nameAr": "الخـليج الدوليـة للكيماويات",
+    "nameEn": "GULF INTERNATIONAL CHEMICALS",
+    "market": "2",
+    "sector": "3"
+  },
+  "UFCI": {
+    "nameAr": "المتحدة للتمويل",
+    "nameEn": "UNITED FINANCE",
+    "market": "1",
+    "sector": "1"
+  },
+  "VOES": {
+    "nameAr": "فولتامب للطاقة",
+    "nameEn": "VOLTAMP ENERGY",
+    "market": "1",
+    "sector": "3"
+  },
+  "UBAR": {
+    "nameAr": "أوبار للفنادق والمنتجعات",
+    "nameEn": "UBAR HOTELS and RESORTS",
+    "market": "2",
+    "sector": "5"
+  },
+  "TFCI": {
+    "nameAr": "تأجير للتمويل",
+    "nameEn": "TAAGEER FINANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "TAOI": {
+    "nameAr": "تكافل عمان للتأمين",
+    "nameEn": "TAKAFUL OMAN",
+    "market": "2",
+    "sector": "1"
+  },
+  "SUWP": {
+    "nameAr": "السوادي للطاقة",
+    "nameEn": "AL SUWADI POWER",
+    "market": "1",
+    "sector": "5"
+  },
+  "SSPW": {
+    "nameAr": "سيمبكورب صلالة",
+    "nameEn": "SEMBCORP SALALAH",
+    "market": "1",
+    "sector": "5"
+  },
+  "SPSI": {
+    "nameAr": "صلالة لخدمات الموانئ",
+    "nameEn": "SALALAH PORT SERVICES",
+    "market": "2",
+    "sector": "5"
+  },
+  "SPFI": {
+    "nameAr": "الصفاء للأغذية",
+    "nameEn": "ASAFFA FOODS",
+    "market": "1",
+    "sector": "3"
+  },
+  "SMNP": {
+    "nameAr": "اس ام ان باور القابضة",
+    "nameEn": "SMN POWER HOLDING",
+    "market": "1",
+    "sector": "5"
+  },
+  "SHRQ": {
+    "nameAr": "الشرقية لتحلية المياه",
+    "nameEn": "SHARQIYAH DESALINATION",
+    "market": "2",
+    "sector": "5"
+  },
+  "SHPS": {
+    "nameAr": "صحار للطاقة",
+    "nameEn": "SOHAR POWER",
+    "market": "2",
+    "sector": "5"
+  },
+  "SFMI": {
+    "nameAr": "مطـاحن صلالة",
+    "nameEn": "SALALAH MILLS",
+    "market": "2",
+    "sector": "3"
+  },
+  "RNSS": {
+    "nameAr": "النهضة للخدمات",
+    "nameEn": "RENAISSANCE SERVICES",
+    "market": "1",
+    "sector": "5"
+  },
+  "PHPC": {
+    "nameAr": "العنقاء للطاقة",
+    "nameEn": "PHOENIX POWER",
+    "market": "1",
+    "sector": "5"
+  },
+  "KPCS": {
+    "nameAr": "الكامل للطاقة (قيد التصفية )",
+    "nameEn": "AL KAMEL POWER ( Under Liquidation )",
+    "market": "3",
+    "sector": "5"
+  },
+  "MCDE": {
+    "nameAr": "مدينة مسقط للتحلية",
+    "nameEn": "MUSCAT CITY DESALINATION",
+    "market": "2",
+    "sector": "5"
+  },
+  "MGMC": {
+    "nameAr": "مسقـط للغازات",
+    "nameEn": "MUSCAT GASES",
+    "market": "2",
+    "sector": "5"
+  },
+  "MSPW": {
+    "nameAr": "مسندم للطاقة",
+    "nameEn": "MUSANDAM POWER",
+    "market": "1",
+    "sector": "5"
+  },
+  "MTMI": {
+    "nameAr": "مصانع مسقط للخيوط",
+    "nameEn": "MUSCAT THREAD MILLS",
+    "market": "2",
+    "sector": "3"
+  },
+  "NAPI": {
+    "nameAr": "الوطنية لمنتجات الألمنيوم",
+    "nameEn": "NATIONAL ALUMINIUM PRODUCTS",
+    "market": "3",
+    "sector": "3"
+  },
+  "GMPI": {
+    "nameAr": "الخليجية لإنتاج الفطر",
+    "nameEn": "GULF MUSHROOM PRODUCTS",
+    "market": "1",
+    "sector": "3"
+  },
+  "GSCI": {
+    "nameAr": "محاجـر الخليج",
+    "nameEn": "GULF STONES",
+    "market": "3",
+    "sector": "3"
+  },
+  "NBOB": {
+    "nameAr": "البنك الوطني العماني",
+    "nameEn": "NATIONAL BANK OMAN",
+    "market": "1",
+    "sector": "1"
+  },
+  "NDTI": {
+    "nameAr": "الوطنية للمنظفات الصناعية",
+    "nameEn": "NATIONAL DETERGENT",
+    "market": "2",
+    "sector": "3"
+  },
+  "LIVA": {
+    "nameAr": "مجموعة ليفا",
+    "nameEn": "LIVA GROUP",
+    "market": "2",
+    "sector": "1"
+  },
+  "NMWI": {
+    "nameAr": "الوطنية للمياه المعدنية",
+    "nameEn": "NATIONAL MINERAL WATER",
+    "market": "3",
+    "sector": "3"
+  },
+  "OCAI": {
+    "nameAr": "صناعة الكابلات العمانية",
+    "nameEn": "OMAN CABLES INDUSTRY",
+    "market": "1",
+    "sector": "3"
+  },
+  "OEIO": {
+    "nameAr": "عمان والإمارات القابضة",
+    "nameEn": "OMAN  EMIRATES HO.",
+    "market": "1",
+    "sector": "1"
+  },
+  "OETI": {
+    "nameAr": "العمانية للاستثمارات التعليمية والتدريبية",
+    "nameEn": "OMAN EDUCATION & TRAINING INVESTMENTS",
+    "market": "2",
+    "sector": "5"
+  },
+  "OFCI": {
+    "nameAr": "الأسماك العمانية",
+    "nameEn": "OMAN FISHERIES",
+    "market": "3",
+    "sector": "3"
+  },
+  "OFMI": {
+    "nameAr": "المطاحن العمانية",
+    "nameEn": "OMAN FLOUR MILLS",
+    "market": "2",
+    "sector": "3"
+  },
+  "ONES": {
+    "nameAr": "الوطنية العمانية للهندسة والاستثمار",
+    "nameEn": "OMAN NATIONAL ENGINEERING & INVESTMENT",
+    "market": "1",
+    "sector": "5"
+  },
+  "OOMS": {
+    "nameAr": "النفط العمانية للتسويق",
+    "nameEn": "OMAN OIL MARKETING",
+    "market": "1",
+    "sector": "5"
+  },
+  "OPCI": {
+    "nameAr": "العمانية للتغليف",
+    "nameEn": "OMAN  PACKAGING",
+    "market": "2",
+    "sector": "3"
+  },
+  "OQIC": {
+    "nameAr": "العمانية القطرية للتأمين",
+    "nameEn": "OMAN QATAR INSURANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "ORCI": {
+    "nameAr": "عمان للمرطبات",
+    "nameEn": "OMAN REFRESHMENT",
+    "market": "2",
+    "sector": "3"
+  },
+  "OSCI": {
+    "nameAr": "حلويات عمان (قيد التصفية )",
+    "nameEn": "OMAN SWEETS ( Under Liquidation )",
+    "market": "3",
+    "sector": "3"
+  },
+  "OUIC": {
+    "nameAr": "العمانية المتحدة للتأمين",
+    "nameEn": "OMAN UNITED INSURANCE",
+    "market": "1",
+    "sector": "1"
+  },
+  "GECP": {
+    "nameAr": "جلفار للهندسة والمقاولات - أسهم ممتازة",
+    "nameEn": "GALFAR ENGIN.PRE",
+    "market": "2",
+    "sector": "3"
+  },
+  "OOMP": {
+    "nameAr": "النفط العمانية - أسهم ممتازة",
+    "nameEn": "OMAN OIL- PREF.",
+    "market": "1",
+    "sector": "5"
+  },
+  "SOMP": {
+    "nameAr": "شل العمانية-أسهم ممتازة",
+    "nameEn": "SHELL OM- PREF.SH",
+    "market": "2",
+    "sector": "5"
+  },
+  "NFCI": {
+    "nameAr": "الوطنية للتمويل",
+    "nameEn": "NATIONAL FINANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "AAIC": {
+    "nameAr": "الأنوار للإستثمارات",
+    "nameEn": "ALANWAR INVESTMENT",
+    "market": "1",
+    "sector": "1"
+  },
+  "AMCI": {
+    "nameAr": "المها للسيراميك",
+    "nameEn": "ALMAHA CERAMICS",
+    "market": "2",
+    "sector": "3"
+  },
+  "BKMB": {
+    "nameAr": "بنك مسقط",
+    "nameEn": "BANK MUSCAT",
+    "market": "1",
+    "sector": "1"
+  },
+  "BKSB": {
+    "nameAr": "بنك صحار الدولي",
+    "nameEn": "SOHAR INTERNATIONAL BANK",
+    "market": "1",
+    "sector": "1"
+  },
+  "MFCI": {
+    "nameAr": "مسقط للتمويل",
+    "nameEn": "MUSCAT FINANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "MHAS": {
+    "nameAr": "المها لتسويق المنتجات النفطية",
+    "nameEn": "Al MAHA PETROLEUM PRODUCTS MARKETING",
+    "market": "1",
+    "sector": "5"
+  },
+  "NGCI": {
+    "nameAr": "الغاز الوطـنـية",
+    "nameEn": "NATIONAL GAS",
+    "market": "2",
+    "sector": "5"
+  },
+  "OCHL": {
+    "nameAr": "عمان كلورين",
+    "nameEn": "OMAN CHLORINE",
+    "market": "2",
+    "sector": "3"
+  },
+  "OCOI": {
+    "nameAr": "اسمنت عمان",
+    "nameEn": "OMAN CEMENT",
+    "market": "1",
+    "sector": "3"
+  },
+  "OMVS": {
+    "nameAr": "العمانية العالمية للتنمية والاستثمار (أومينفست)",
+    "nameEn": "OMINVEST",
+    "market": "1",
+    "sector": "1"
+  },
+  "ORDS": {
+    "nameAr": "أُريدو",
+    "nameEn": "OOREDOO",
+    "market": "1",
+    "sector": "5"
+  },
+  "OTEL": {
+    "nameAr": "العمانية للاتصالات",
+    "nameEn": "OMAN TELECOM",
+    "market": "1",
+    "sector": "5"
+  },
+  "RCCI": {
+    "nameAr": "ريسوت للاسمنت",
+    "nameEn": "RAYSUT CEMENT",
+    "market": "3",
+    "sector": "3"
+  },
+  "SIHC": {
+    "nameAr": "الشرقية للاستثمار القابضة",
+    "nameEn": "AL SHARQIYA INVESTMENT HO.",
+    "market": "1",
+    "sector": "1"
+  },
+  "SOMS": {
+    "nameAr": "شل الـعمـانية للتسـويـق",
+    "nameEn": "SHELL OMAN MARKETING",
+    "market": "2",
+    "sector": "5"
+  },
+  "AJSP": {
+    "nameAr": "الجزيرة للخدمات-أسهم ممتازة",
+    "nameEn": "JAZERAH SER-P",
+    "market": "1",
+    "sector": "5"
+  },
+  "ABMI": {
+    "nameAr": "صناعة المواد الكاشطة ( قيد التصفية )",
+    "nameEn": "ABRASIVES MANUFACTURING ( Under Liquidation )",
+    "market": "3",
+    "sector": "3"
+  },
+  "OEFI": {
+    "nameAr": "العمانية الأوروبية للصناعات الغذائية",
+    "nameEn": "OMANI EURO FOOD INDUSTRIES",
+    "market": "3",
+    "sector": "3"
+  },
+  "OMCI": {
+    "nameAr": "خزف عمان (قيد التصفية )",
+    "nameEn": "OMAN CERAMIC (Under Liquidation )",
+    "market": "3",
+    "sector": "3"
+  },
+  "FSCI": {
+    "nameAr": "الخدمات المالية",
+    "nameEn": "FINANCIAL SERVICES",
+    "market": "2",
+    "sector": "1"
+  },
+  "HECI": {
+    "nameAr": "(قيد التصفية) الحسن الهندسـية",
+    "nameEn": "AL HASSAN ENGINEERING (Under Liquidation)",
+    "market": "3",
+    "sector": "3"
+  },
+  "AMAN": {
+    "nameAr": "صندوق أمان للاستثمار العقاري",
+    "nameEn": "AMAN REAL ESTATE",
+    "market": "2",
+    "sector": "2"
+  },
+  "OAB": {
+    "nameAr": "بنك عمان العربي",
+    "nameEn": "OMAN ARAB BANK",
+    "market": "2",
+    "sector": "1"
+  },
+  "OMRF": {
+    "nameAr": "صندوق عمان العقاري",
+    "nameEn": "OMAN REIT FUND",
+    "market": "2",
+    "sector": "2"
+  },
+  "ORIC": {
+    "nameAr": "العمانية لإعادة التأمين",
+    "nameEn": "OMAN REINSURANCE",
+    "market": "2",
+    "sector": "1"
+  },
+  "BRDE": {
+    "nameAr": "بركاء لتحلية المياه",
+    "nameEn": "BARKA DESALINATION",
+    "market": "1",
+    "sector": "5"
+  },
+  "PRFD": {
+    "nameAr": "صندوق اللؤلؤة للاستثمار العقاري",
+    "nameEn": "THE PEARL REIF",
+    "market": "2",
+    "sector": "2"
+  },
+  "ABRJ": {
+    "nameAr": "أبراج لخدمات الطاقة",
+    "nameEn": "ABRAJ ENERGY SERVICES",
+    "market": "1",
+    "sector": "5"
+  },
+  "OQGN": {
+    "nameAr": "أوكيو لشبكات الغاز",
+    "nameEn": "OQ GAS NETWORKS",
+    "market": "1",
+    "sector": "5"
+  },
+  "JREF": {
+    "nameAr": "صندوق جبل للاستثمار العقاري",
+    "nameEn": "JABAL REIF",
+    "market": "2",
+    "sector": "2"
+  },
+  "EVGF": {
+    "nameAr": "صندوق ابيكيور الرؤية للنمو في دول مجلس التعاون",
+    "nameEn": "EPICURE VISION GCC",
+    "market": "2",
+    "sector": "2"
+  },
+  "OQEP": {
+    "nameAr": "أوكيو للاستكشاف و الإنتاج",
+    "nameEn": "OQ EXPLORATION AND PRODUCTION",
+    "market": "1",
+    "sector": "5"
+  },
+  "OQBI": {
+    "nameAr": "أوكيو للصناعات الأساسية- المنطقة الحرة بصلالة",
+    "nameEn": "OQ BASE INDUSTRIES (SFZ)",
+    "market": "1",
+    "sector": "3"
+  },
+  "ASCO": {
+    "nameAr": "اسياد للنقل البحري",
+    "nameEn": "ASYAD SHIPPING",
+    "market": "1",
+    "sector": "5"
+  },
+  "BWRQ": {
+    "nameAr": "بوارق نزوى الدولية للاستثمار",
+    "nameEn": "BAWAREQ NIZWA",
+    "market": "8",
+    "sector": "5"
+  },
+  "OGWF": {
+    "nameAr": "صندوق بوابة عمان",
+    "nameEn": "OMAN GATEWAY FUND",
+    "market": "2",
+    "sector": "2"
+  },
+  "OMIF": {
+    "nameAr": "العمانية الهندية للسماد",
+    "nameEn": "OMIFCO",
+    "market": "2",
+    "sector": "3"
+  },
+  "SIBR": {
+    "nameAr": "حقوق أفضلية بنك صحار 2026",
+    "nameEn": "Sohar international bank rights issue 2026",
+    "market": "5",
+    "sector": "1"
+  }
+}
