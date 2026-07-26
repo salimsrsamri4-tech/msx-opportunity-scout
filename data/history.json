@@ -9,8 +9,8 @@
   "AACT": [
     {
       "date": "2026-07-26",
-      "close": 0.137,
-      "volume": 69228
+      "close": 0.134,
+      "volume": 76493
     }
   ],
   "ABHS": [
@@ -107,29 +107,29 @@
   "AMAT": [
     {
       "date": "2026-07-26",
-      "close": 0.115,
-      "volume": 10500
+      "close": 0.114,
+      "volume": 23000
     }
   ],
   "AMII": [
     {
       "date": "2026-07-26",
       "close": 0.035,
-      "volume": 30800
+      "volume": 60900
     }
   ],
   "AOFS": [
     {
       "date": "2026-07-26",
       "close": 0.151,
-      "volume": 0
+      "volume": 11834
     }
   ],
   "BWPC": [
     {
       "date": "2026-07-26",
-      "close": 0.16,
-      "volume": 900
+      "close": 0.159,
+      "volume": 2870
     }
   ],
   "BACS": [
@@ -142,22 +142,22 @@
   "BATP": [
     {
       "date": "2026-07-26",
-      "close": 0.165,
-      "volume": 49880
+      "close": 0.17,
+      "volume": 99880
     }
   ],
   "BKDB": [
     {
       "date": "2026-07-26",
       "close": 0.224,
-      "volume": 140000
+      "volume": 155000
     }
   ],
   "BKNZ": [
     {
       "date": "2026-07-26",
       "close": 0.134,
-      "volume": 145456
+      "volume": 271732
     }
   ],
   "DBCI": [
@@ -171,14 +171,14 @@
     {
       "date": "2026-07-26",
       "close": 0.825,
-      "volume": 175000
+      "volume": 361540
     }
   ],
   "DBIH": [
     {
       "date": "2026-07-26",
-      "close": 0.055,
-      "volume": 3470
+      "close": 0.06,
+      "volume": 20470
     }
   ],
   "DFIN": [
@@ -206,7 +206,7 @@
     {
       "date": "2026-07-26",
       "close": 0.261,
-      "volume": 3770
+      "volume": 4770
     }
   ],
   "FINC": [
@@ -219,8 +219,8 @@
   "GECS": [
     {
       "date": "2026-07-26",
-      "close": 0.163,
-      "volume": 4070
+      "close": 0.168,
+      "volume": 22950
     }
   ],
   "GFIC": [
@@ -233,22 +233,22 @@
   "GICI": [
     {
       "date": "2026-07-26",
-      "close": 0.069,
-      "volume": 53455
+      "close": 0.068,
+      "volume": 61585
     }
   ],
   "UFCI": [
     {
       "date": "2026-07-26",
       "close": 0.09,
-      "volume": 43055
+      "volume": 291969
     }
   ],
   "VOES": [
     {
       "date": "2026-07-26",
-      "close": 0.165,
-      "volume": 1600
+      "close": 0.163,
+      "volume": 27143
     }
   ],
   "UBAR": [
@@ -269,14 +269,14 @@
     {
       "date": "2026-07-26",
       "close": 0.066,
-      "volume": 1400
+      "volume": 2020
     }
   ],
   "SUWP": [
     {
       "date": "2026-07-26",
       "close": 0.17,
-      "volume": 300838
+      "volume": 388186
     }
   ],
   "SSPW": [
@@ -296,8 +296,8 @@
   "SPFI": [
     {
       "date": "2026-07-26",
-      "close": 0.749,
-      "volume": 0
+      "close": 0.75,
+      "volume": 20530
     }
   ],
   "SMNP": [
@@ -317,8 +317,8 @@
   "SHPS": [
     {
       "date": "2026-07-26",
-      "close": 0.243,
-      "volume": 0
+      "close": 0.22,
+      "volume": 271
     }
   ],
   "SFMI": [
@@ -332,14 +332,14 @@
     {
       "date": "2026-07-26",
       "close": 0.282,
-      "volume": 112505
+      "volume": 114755
     }
   ],
   "PHPC": [
     {
       "date": "2026-07-26",
       "close": 0.245,
-      "volume": 1096037
+      "volume": 1281216
     }
   ],
   "KPCS": [
@@ -353,7 +353,7 @@
     {
       "date": "2026-07-26",
       "close": 0.088,
-      "volume": 0
+      "volume": 23350
     }
   ],
   "MGMC": [
@@ -366,8 +366,8 @@
   "MSPW": [
     {
       "date": "2026-07-26",
-      "close": 0.33,
-      "volume": 0
+      "close": 0.34,
+      "volume": 112
     }
   ],
   "MTMI": [
@@ -381,14 +381,14 @@
     {
       "date": "2026-07-26",
       "close": 0.301,
-      "volume": 12000
+      "volume": 19000
     }
   ],
   "GMPI": [
     {
       "date": "2026-07-26",
-      "close": 0.41,
-      "volume": 108630
+      "close": 0.42,
+      "volume": 195505
     }
   ],
   "GSCI": [
@@ -402,7 +402,7 @@
     {
       "date": "2026-07-26",
       "close": 0.45,
-      "volume": 4000000
+      "volume": 4112365
     }
   ],
   "NDTI": [
@@ -430,14 +430,14 @@
     {
       "date": "2026-07-26",
       "close": 3.3,
-      "volume": 2536
+      "volume": 5554
     }
   ],
   "OEIO": [
     {
       "date": "2026-07-26",
-      "close": 0.112,
-      "volume": 100
+      "close": 0.123,
+      "volume": 8429
     }
   ],
   "OETI": [
@@ -507,7 +507,7 @@
     {
       "date": "2026-07-26",
       "close": 0.315,
-      "volume": 12897
+      "volume": 13897
     }
   ],
   "GECP": [
@@ -556,49 +556,49 @@
     {
       "date": "2026-07-26",
       "close": 0.385,
-      "volume": 15189409
+      "volume": 24842193
     }
   ],
   "BKSB": [
     {
       "date": "2026-07-26",
-      "close": 0.174,
-      "volume": 36755463
+      "close": 0.178,
+      "volume": 44538129
     }
   ],
   "MFCI": [
     {
       "date": "2026-07-26",
-      "close": 0.059,
-      "volume": 58640
+      "close": 0.062,
+      "volume": 63640
     }
   ],
   "MHAS": [
     {
       "date": "2026-07-26",
       "close": 1.15,
-      "volume": 0
+      "volume": 300
     }
   ],
   "NGCI": [
     {
       "date": "2026-07-26",
-      "close": 0.107,
-      "volume": 214761
+      "close": 0.109,
+      "volume": 245261
     }
   ],
   "OCHL": [
     {
       "date": "2026-07-26",
       "close": 0.159,
-      "volume": 2200
+      "volume": 5000
     }
   ],
   "OCOI": [
     {
       "date": "2026-07-26",
-      "close": 0.58,
-      "volume": 1000
+      "close": 0.575,
+      "volume": 1500
     }
   ],
   "OMVS": [
@@ -611,8 +611,8 @@
   "ORDS": [
     {
       "date": "2026-07-26",
-      "close": 0.316,
-      "volume": 25215
+      "close": 0.318,
+      "volume": 30215
     }
   ],
   "OTEL": [
@@ -626,14 +626,14 @@
     {
       "date": "2026-07-26",
       "close": 0.175,
-      "volume": 0
+      "volume": 20000
     }
   ],
   "SIHC": [
     {
       "date": "2026-07-26",
       "close": 0.1,
-      "volume": 9460
+      "volume": 24560
     }
   ],
   "SOMS": [
@@ -682,14 +682,14 @@
     {
       "date": "2026-07-26",
       "close": 0.005,
-      "volume": 0
+      "volume": 100
     }
   ],
   "AMAN": [
     {
       "date": "2026-07-26",
-      "close": 0.074,
-      "volume": 1111
+      "close": 0.077,
+      "volume": 1211
     }
   ],
   "OAB": [
@@ -702,8 +702,8 @@
   "OMRF": [
     {
       "date": "2026-07-26",
-      "close": 0.107,
-      "volume": 10100
+      "close": 0.108,
+      "volume": 11960
     }
   ],
   "ORIC": [
@@ -730,22 +730,22 @@
   "ABRJ": [
     {
       "date": "2026-07-26",
-      "close": 0.364,
-      "volume": 5145500
+      "close": 0.362,
+      "volume": 5508320
     }
   ],
   "OQGN": [
     {
       "date": "2026-07-26",
       "close": 0.195,
-      "volume": 15724830
+      "volume": 24383454
     }
   ],
   "JREF": [
     {
       "date": "2026-07-26",
       "close": 0.104,
-      "volume": 0
+      "volume": 20000
     }
   ],
   "EVGF": [
@@ -759,21 +759,21 @@
     {
       "date": "2026-07-26",
       "close": 0.438,
-      "volume": 6899670
+      "volume": 7133335
     }
   ],
   "OQBI": [
     {
       "date": "2026-07-26",
-      "close": 0.237,
-      "volume": 24050520
+      "close": 0.238,
+      "volume": 34913496
     }
   ],
   "ASCO": [
     {
       "date": "2026-07-26",
       "close": 0.247,
-      "volume": 9065057
+      "volume": 11545142
     }
   ],
   "BWRQ": [
@@ -793,8 +793,8 @@
   "OMIF": [
     {
       "date": "2026-07-26",
-      "close": 0.188,
-      "volume": 895610
+      "close": 0.189,
+      "volume": 2076636
     }
   ],
   "SIBR": [
