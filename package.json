@@ -1,0 +1,13 @@
+{
+  "name": "msx-opportunity-scout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "رصد فرص التداول في بورصة مسقط (MSX) وإرسال تنبيهات عبر تيليجرام",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/main.js"
+  }
+}
