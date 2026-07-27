@@ -220,6 +220,29 @@ header.top h1 {
   white-space: nowrap;
 }
 
+.track-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.track-table th {
+  text-align: right;
+  color: var(--text-dim);
+  font-weight: 600;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.track-table td {
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.track-table tr:last-child td { border-bottom: none; }
+.track-table td.up { color: var(--up); font-weight: 600; }
+.track-table td.down { color: var(--down); font-weight: 600; }
+
 .card h2 {
   font-size: 1.05rem;
   margin: 0 0 12px;

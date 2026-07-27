@@ -387,12 +387,79 @@ function renderWeeklyMovers() {
   });
 }
 
+const TRACK_RECORD_HORIZON_SESSIONS = 5; // عدد جلسات التداول بعد الإشارة لقياس أثرها
+
+function computeSignalTrackRecord() {
+  const statsByType = {};
+  for (const o of state.opportunities) {
+    const entries = (state.history[o.symbol] ?? []).slice().sort((a, b) => (a.date < b.date ? -1 : 1));
+    const idx = entries.findIndex((e) => e.date === o.date);
+    if (idx === -1) continue;
+    const futureIdx = idx + TRACK_RECORD_HORIZON_SESSIONS;
+    if (futureIdx >= entries.length) continue;
+    const signalClose = entries[idx].close;
+    const futureClose = entries[futureIdx].close;
+    if (!signalClose || !futureClose) continue;
+    const changePct = ((futureClose - signalClose) / signalClose) * 100;
+
+    const bucket = statsByType[o.type] ?? { count: 0, wins: 0, totalChange: 0 };
+    bucket.count += 1;
+    if (changePct > 0) bucket.wins += 1;
+    bucket.totalChange += changePct;
+    statsByType[o.type] = bucket;
+  }
+  return statsByType;
+}
+
+function renderTrackRecord() {
+  const holder = document.getElementById("track-record");
+  const stats = computeSignalTrackRecord();
+  const types = Object.keys(stats);
+
+  if (types.length === 0) {
+    holder.innerHTML =
+      '<div class="empty-state">لا توجد بيانات كافية بعد لقياس أداء الإشارات — يحتاج الأمر عدة أسابيع من التشغيل التلقائي المتراكم.</div>';
+    return;
+  }
+
+  holder.innerHTML = `
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th>نوع الإشارة</th>
+          <th>عدد الحالات المقاسة</th>
+          <th>نسبة الحالات التي ارتفع فيها السعر</th>
+          <th>متوسط التغير</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${types
+          .map((t) => {
+            const s = stats[t];
+            const winRate = ((s.wins / s.count) * 100).toFixed(0);
+            const avgChange = (s.totalChange / s.count).toFixed(2);
+            return `
+          <tr>
+            <td><span class="badge ${t}">${TYPE_LABELS[t] ?? t}</span></td>
+            <td>${s.count}</td>
+            <td>${winRate}%</td>
+            <td class="${avgChange >= 0 ? "up" : "down"}">${avgChange >= 0 ? "▲" : "▼"} ${Math.abs(avgChange)}%</td>
+          </tr>`;
+          })
+          .join("")}
+      </tbody>
+    </table>
+    <p class="disclaimer">القياس: التغير في السعر بعد ${TRACK_RECORD_HORIZON_SESSIONS} جلسات تداول من تاريخ الإشارة. هذا سجل وصفي للماضي فقط، ولا يضمن تكرار نفس النتيجة مستقبلاً.</p>
+  `;
+}
+
 async function init() {
   await loadData();
   renderMeta();
   renderOpportunities();
   renderCompanyPanel();
   renderWeeklyMovers();
+  renderTrackRecord();
   setupFilters();
   setupSearch();
 }
