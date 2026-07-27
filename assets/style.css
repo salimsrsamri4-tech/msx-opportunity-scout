@@ -88,6 +88,46 @@ header.top h1 {
   margin-bottom: 12px;
 }
 
+.help-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+}
+
+.help-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+.help-box summary::-webkit-details-marker { display: none; }
+
+.help-box ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.help-box li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+
+.help-box .disclaimer {
+  margin: 12px 0 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
 .search-results {
   position: relative;
 }

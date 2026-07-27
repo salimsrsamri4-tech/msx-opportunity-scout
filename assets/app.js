@@ -6,6 +6,14 @@ const TYPE_LABELS = {
   financial_result: "نتائج مالية",
 };
 
+const TYPE_HELP = {
+  price_move: "السعر تحرك بقوة (5% فأكثر) خلال يوم واحد. ليست إشارة شراء/بيع.",
+  volume_spike: "تداول أعلى بـ3 أضعاف من المعتاد — اهتمام مفاجئ بالسهم.",
+  breakout_high: "أعلى سعر إغلاق خلال آخر 20 جلسة.",
+  breakout_low: "أدنى سعر إغلاق خلال آخر 20 جلسة.",
+  financial_result: "تغيّر كبير (30%+) في الأرباح الفصلية مقارنة بالفترة السابقة.",
+};
+
 const state = {
   companies: {},
   history: {},
@@ -64,7 +72,7 @@ function renderOpportunities() {
       (o) => `
       <div class="opp-item">
         <div class="opp-top">
-          <span class="badge ${o.type}">${TYPE_LABELS[o.type] ?? o.type}</span>
+          <span class="badge ${o.type}" title="${TYPE_HELP[o.type] ?? ""}">${TYPE_LABELS[o.type] ?? o.type}</span>
           <span class="opp-symbol" data-symbol="${o.symbol}">${o.symbol}</span>
           <span class="opp-date">${o.date}</span>
         </div>
@@ -196,7 +204,7 @@ function renderCompanyPanel() {
                 (o) => `
         <div class="opp-item">
           <div class="opp-top">
-            <span class="badge ${o.type}">${TYPE_LABELS[o.type] ?? o.type}</span>
+            <span class="badge ${o.type}" title="${TYPE_HELP[o.type] ?? ""}">${TYPE_LABELS[o.type] ?? o.type}</span>
             <span class="opp-date">${o.date}</span>
           </div>
           <div class="opp-msg">${escapeHtml(o.message ?? "")}</div>
