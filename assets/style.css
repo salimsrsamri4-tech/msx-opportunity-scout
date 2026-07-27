@@ -193,6 +193,34 @@ header.top h1 {
   flex-wrap: wrap;
 }
 
+.watchlist-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.star-btn {
+  border: none;
+  background: none;
+  color: #d4a017;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 2px;
+}
+
+.star-btn.large {
+  font-size: 1.6rem;
+}
+
+.watchlist-item {
+  cursor: pointer;
+}
+
 .filters button {
   border: 1px solid var(--border);
   background: var(--surface);

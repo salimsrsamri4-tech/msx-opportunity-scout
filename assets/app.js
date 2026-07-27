@@ -18,12 +18,31 @@ const TYPE_HELP = {
   dividend_cutoff_soon: "تاريخ استحقاق التوزيعات خلال أسبوع — يجب تملّك السهم قبله للاستفادة.",
 };
 
+const WATCHLIST_KEY = "msx-scout-watchlist";
+
+function getWatchlist() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(WATCHLIST_KEY) ?? "[]"));
+  } catch {
+    return new Set();
+  }
+}
+
+function toggleWatchlist(symbol) {
+  const list = getWatchlist();
+  if (list.has(symbol)) list.delete(symbol);
+  else list.add(symbol);
+  localStorage.setItem(WATCHLIST_KEY, JSON.stringify([...list]));
+  return list;
+}
+
 const state = {
   companies: {},
   history: {},
   opportunities: [],
   meta: {},
   activeFilter: "all",
+  watchlistOnly: false,
   selectedSymbol: null,
 };
 
@@ -61,13 +80,17 @@ function renderMeta() {
 
 function renderOpportunities() {
   const list = document.getElementById("opp-list");
+  const watchlist = getWatchlist();
   const items = [...state.opportunities]
     .filter((o) => state.activeFilter === "all" || matchesFilter(o.type, state.activeFilter))
+    .filter((o) => !state.watchlistOnly || watchlist.has(o.symbol))
     .reverse()
     .slice(0, 150);
 
   if (items.length === 0) {
-    list.innerHTML = '<div class="empty-state">لا توجد فرص مرصودة بعد ضمن هذا الفلتر.</div>';
+    list.innerHTML = `<div class="empty-state">${
+      state.watchlistOnly ? "لا توجد فرص لشركات في قائمة متابعتك بعد." : "لا توجد فرص مرصودة بعد ضمن هذا الفلتر."
+    }</div>`;
     return;
   }
 
@@ -78,6 +101,9 @@ function renderOpportunities() {
         <div class="opp-top">
           <span class="badge ${o.type}" title="${TYPE_HELP[o.type] ?? ""}">${TYPE_LABELS[o.type] ?? o.type}</span>
           <span class="opp-symbol" data-symbol="${o.symbol}">${o.symbol}</span>
+          <button class="star-btn" data-star-symbol="${o.symbol}" title="أضف/أزل من المتابعة">${
+        watchlist.has(o.symbol) ? "★" : "☆"
+      }</button>
           <span class="opp-date">${o.date}</span>
         </div>
         <div class="opp-name">${escapeHtml(o.name ?? "")}</div>
@@ -88,6 +114,15 @@ function renderOpportunities() {
 
   list.querySelectorAll(".opp-symbol").forEach((el) => {
     el.addEventListener("click", () => selectCompany(el.dataset.symbol));
+  });
+
+  list.querySelectorAll(".star-btn").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleWatchlist(el.dataset.starSymbol);
+      renderOpportunities();
+      if (state.selectedSymbol === el.dataset.starSymbol) renderCompanyPanel();
+    });
   });
 }
 
@@ -113,6 +148,12 @@ function setupFilters() {
       state.activeFilter = btn.dataset.filter;
       renderOpportunities();
     });
+  });
+
+  const watchlistToggle = document.getElementById("watchlist-only-toggle");
+  watchlistToggle.addEventListener("change", () => {
+    state.watchlistOnly = watchlistToggle.checked;
+    renderOpportunities();
   });
 }
 
@@ -172,7 +213,32 @@ function renderCompanyPanel() {
   const symbol = state.selectedSymbol;
 
   if (!symbol) {
-    panel.innerHTML = '<div class="placeholder">ابحث عن رمز أو اسم شركة، أو اضغط على أي فرصة في القائمة لعرض تفاصيلها هنا.</div>';
+    const watchlist = [...getWatchlist()];
+    if (watchlist.length === 0) {
+      panel.innerHTML = '<div class="placeholder">ابحث عن رمز أو اسم شركة، أو اضغط على أي فرصة في القائمة لعرض تفاصيلها هنا.<br />اضغط ☆ بجانب أي فرصة لإضافتها إلى قائمة متابعتك.</div>';
+      return;
+    }
+    panel.innerHTML = `
+      <h3 style="margin-top:0">⭐ قائمة متابعتك</h3>
+      ${watchlist
+        .map((s) => {
+          const c = state.companies[s];
+          const entries = (state.history[s] ?? []).slice().sort((a, b) => (a.date < b.date ? -1 : 1));
+          const latest = entries[entries.length - 1];
+          return `
+          <div class="opp-item watchlist-item" data-symbol="${s}">
+            <div class="opp-top">
+              <span class="opp-symbol" data-symbol="${s}">${s}</span>
+              <span class="opp-date">${escapeHtml(c?.nameAr ?? "")}</span>
+              ${latest ? `<span style="margin-right:auto">${latest.close}</span>` : ""}
+            </div>
+          </div>`;
+        })
+        .join("")}
+    `;
+    panel.querySelectorAll(".opp-symbol").forEach((el) => {
+      el.addEventListener("click", () => selectCompany(el.dataset.symbol));
+    });
     return;
   }
 
@@ -193,12 +259,16 @@ function renderCompanyPanel() {
       </div>`;
   }
 
+  const watchlist = getWatchlist();
   panel.innerHTML = `
     <div class="company-header">
       <div>
         <div class="name">${escapeHtml(company?.nameAr ?? symbol)}</div>
         <div class="symbol">${symbol}${company?.nameEn ? " · " + escapeHtml(company.nameEn) : ""}</div>
       </div>
+      <button class="star-btn large" id="panel-star-btn" title="أضف/أزل من المتابعة">${
+        watchlist.has(symbol) ? "★" : "☆"
+      }</button>
     </div>
     ${priceHtml}
     <div id="chart-holder"></div>
@@ -226,6 +296,12 @@ function renderCompanyPanel() {
   if (entries.length >= 2) {
     document.getElementById("chart-holder").innerHTML = buildChartSvg(entries);
   }
+
+  document.getElementById("panel-star-btn").addEventListener("click", () => {
+    toggleWatchlist(symbol);
+    renderCompanyPanel();
+    renderOpportunities();
+  });
 }
 
 function buildChartSvg(entries) {
