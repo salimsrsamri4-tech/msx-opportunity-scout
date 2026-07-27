@@ -30,6 +30,10 @@ export function fetchFinancialResults() {
   return postJson("/Companies-Fin-Pref.aspx/List");
 }
 
+export function fetchDividends(year) {
+  return postJson("/dividends.aspx/MasterList", { Year: year });
+}
+
 export function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

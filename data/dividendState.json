@@ -1,0 +1,250 @@
+{
+  "SSPW|2026|<= 16%|-|Nov 01, 2026": {
+    "newAlerted": true
+  },
+  "AMAN|2026| 4.93%|-|Aug 03, 2026": {
+    "newAlerted": true,
+    "cutoffAlerted": true
+  },
+  "BWPC|2026| 4.81%|-|Jul 28, 2026": {
+    "newAlerted": true,
+    "cutoffAlerted": true
+  },
+  "OEIO|2026| 5%|5%|Jul 07, 2026": {
+    "newAlerted": true
+  },
+  "AAIC|2026| 5%|3%|Jun 30, 2026": {
+    "newAlerted": true
+  },
+  "NBII|2026| 60%|-|Jun 30, 2026": {
+    "newAlerted": true
+  },
+  "JREF|2026| 1.75%|-|Jun 04, 2026": {
+    "newAlerted": true
+  },
+  "BATP|2026| 2%|-|Jun 01, 2026": {
+    "newAlerted": true
+  },
+  "SUWP|2026| 2%|-|Jun 01, 2026": {
+    "newAlerted": true
+  },
+  "OQEP|2026| 72.3%|-|May 24, 2026": {
+    "newAlerted": true
+  },
+  "MCDE|2026| 2.732%|-|May 17, 2026": {
+    "newAlerted": true
+  },
+  "OMRF|2026| 1.6%|-|May 11, 2026": {
+    "newAlerted": true
+  },
+  "BRDE|2026| 6%|-|May 07, 2026": {
+    "newAlerted": true
+  },
+  "DIDI|2026| 4%|-|Apr 16, 2026": {
+    "newAlerted": true
+  },
+  "AFIC|2026| 12%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "AOFS|2026| 11%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "BKSB|2026| 4%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "GFIC|2026| 18%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "OCCI|2026| 10%|10%|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "OMVS|2026| 20%|20%|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "SFMI|2026| 60%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "SIHC|2026| 6%|-|Mar 31, 2026": {
+    "newAlerted": true
+  },
+  "BKDB|2026| 7.5%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "BKNZ|2026| 2.7%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "GICI|2026| 3.9%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "LIVA|2026| 10%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "NFCI|2026| 15%|7%|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "OAB|2026| 5%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "OCHL|2026| 5%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "OFMI|2026| 25%|5%|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "ONES|2026| 10%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "OOMS|2026| 60%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "ORCI|2026| 14%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "PRFD|2026| 5.78%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "SMNP|2026| 25%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "UFCI|2026| 5%|-|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "VOES|2026| 70%|6.82%|Mar 30, 2026": {
+    "newAlerted": true
+  },
+  "ABOB|2026| 6%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "AMAT|2026| 8%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "NBOB|2026| 10.5%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "OQIC|2026| 6.5%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "OTEL|2026| 55%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "OUIC|2026| 20%|5%|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "RNSS|2026| 30%|-|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "TFCI|2026| 6.4%|1.6%|Mar 29, 2026": {
+    "newAlerted": true
+  },
+  "OCOI|2026| 46.54%|-|Mar 28, 2026": {
+    "newAlerted": true
+  },
+  "AACT|2026| 3%|-|Mar 26, 2026": {
+    "newAlerted": true
+  },
+  "AJSS|2026| 20%|-|Mar 26, 2026": {
+    "newAlerted": true
+  },
+  "ASCO|2026| 22.16%|-|Mar 26, 2026": {
+    "newAlerted": true
+  },
+  "NDTI|2026| 25%|-|Mar 26, 2026": {
+    "newAlerted": true
+  },
+  "SPFI|2026| 27%|-|Mar 26, 2026": {
+    "newAlerted": true
+  },
+  "ATMI|2026| 40%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "DICS|2026| 17.5%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "GHOS|2026| 20%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "MHAS|2026| 85%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "OCAI|2026| 95.5%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "OQGN|2026| 5.6%|-|Mar 25, 2026": {
+    "newAlerted": true
+  },
+  "ABRJ|2026| 16.88%|-|Mar 24, 2026": {
+    "newAlerted": true
+  },
+  "AMCI|2026| 4%|-|Mar 24, 2026": {
+    "newAlerted": true
+  },
+  "GMPI|2026| 25%|10%|Mar 24, 2026": {
+    "newAlerted": true
+  },
+  "BKMB|2026| 18%|-|Mar 17, 2026": {
+    "newAlerted": true
+  },
+  "SHRQ|2026| 15%|-|Mar 17, 2026": {
+    "newAlerted": true
+  },
+  "MTMI|2026| 12.5%|5%|Mar 16, 2026": {
+    "newAlerted": true
+  },
+  "MSPW|2026| 13.8%|-|Mar 15, 2026": {
+    "newAlerted": true
+  },
+  "OQBI|2026| 12.325%|-|Mar 15, 2026": {
+    "newAlerted": true
+  },
+  "ORDS|2026| 11.53%|-|Mar 15, 2026": {
+    "newAlerted": true
+  },
+  "SPSI|2026| 15%|-|Mar 15, 2026": {
+    "newAlerted": true
+  },
+  "OQEP|2026| 72.3%|-|Mar 12, 2026": {
+    "newAlerted": true
+  },
+  "MFCI|2026| 1.67%|-|Mar 11, 2026": {
+    "newAlerted": true
+  },
+  "SOMS|2026| 40%|-|Mar 10, 2026": {
+    "newAlerted": true
+  },
+  "OPCI|2026| 10%|-|Mar 09, 2026": {
+    "newAlerted": true
+  },
+  "OMRF|2026| 1.6%|-|Mar 08, 2026": {
+    "newAlerted": true
+  },
+  "SAHS|2026| 25%|-|Feb 24, 2026": {
+    "newAlerted": true
+  },
+  "JREF|2026| 1.625%|-|Feb 23, 2026": {
+    "newAlerted": true
+  },
+  "PHPC|2026| 2%|-|Jan 28, 2026": {
+    "newAlerted": true
+  },
+  "BWPC|2026| 4.53%|-|Jan 15, 2026": {
+    "newAlerted": true
+  },
+  "BATP|2026|<= 8%|-|DEC 2026 **": {
+    "newAlerted": true
+  },
+  "BRDE|2026|<= 12%|-|NOV 2026 **": {
+    "newAlerted": true
+  },
+  "MCDE|2026|>= 5.464%|-|NOV 2026 **": {
+    "newAlerted": true
+  },
+  "MSPW|2026| 13.8%|-|SEP 2026 **": {
+    "newAlerted": true
+  },
+  "PHPC|2026|<= 8.1%|-|JULY 2026 **": {
+    "newAlerted": true
+  },
+  "SUWP|2026|<= 7.5%|-|DEC 2026  **": {
+    "newAlerted": true
+  }
+}

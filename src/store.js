@@ -47,14 +47,31 @@ export function saveCompaniesSnapshot(filePath, companies) {
   saveJson(filePath, map);
 }
 
+function opportunityKey(o) {
+  return `${o.date}|${o.symbol}|${o.type}`;
+}
+
 export function appendOpportunitiesLog(filePath, date, opportunities) {
   const log = loadJson(filePath, []);
-  for (const o of opportunities) log.push({ date, ...o });
-  const trimmed = log.slice(-MAX_OPPORTUNITY_LOG_ENTRIES);
+  const byKey = new Map(log.map((o) => [opportunityKey(o), o]));
+  for (const o of opportunities) {
+    const entry = { date, ...o };
+    byKey.set(opportunityKey(entry), entry);
+  }
+  const merged = [...byKey.values()].sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+  const trimmed = merged.slice(-MAX_OPPORTUNITY_LOG_ENTRIES);
   saveJson(filePath, trimmed);
   return trimmed;
 }
 
 export function saveMeta(filePath, meta) {
   saveJson(filePath, meta);
+}
+
+export function loadDividendState(filePath) {
+  return loadJson(filePath, {});
+}
+
+export function saveDividendState(filePath, state) {
+  saveJson(filePath, state);
 }

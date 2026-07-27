@@ -5,6 +5,7 @@ export const THRESHOLDS = {
   breakoutLookbackDays: 20, // نطاق أعلى/أدنى سعر للمقارنة
   profitChangePct: 30, // نسبة تغير الأرباح الفصلية اللافتة
   recentNewsDays: 3, // اعتبار نتائج الأرباح "حديثة" خلال كم يوم
+  dividendCutoffWarningDays: 7, // تنبيه قرب تاريخ استحقاق التوزيعات قبل كم يوم
 };
 
 function average(nums) {
@@ -61,6 +62,63 @@ export function evaluateTechnicalOpportunities(company, snapshot, priorEntries) 
         });
       }
     }
+  }
+
+  return opportunities;
+}
+
+export function buildDividendKey(row) {
+  return [row.Symbol, row.DividendYear, row.Cash1, row.BonusShare1, row.CutoffDate1].join("|").trim();
+}
+
+function formatDistribution(row) {
+  const parts = [];
+  const cashText = (row.Cash1 ?? "").trim();
+  const bonusText = (row.BonusShare1 ?? "").trim();
+  if (cashText && cashText !== "-") parts.push(`نقدي ${cashText}`);
+  if (bonusText && bonusText !== "-") parts.push(`أسهم منحة ${bonusText}`);
+  return parts.length > 0 ? parts.join(" + ") : "توزيعات";
+}
+
+// dividendState يُحدَّث بالمرجع (mutated in place) ليحفظه main.js لاحقًا كملف JSON،
+// حتى لا نُنبّه على نفس الإعلان أكثر من مرة.
+export function evaluateDividendOpportunities(dividendRows, dividendState, now = new Date()) {
+  const opportunities = [];
+  const warningCutoff = new Date(now.getTime() + THRESHOLDS.dividendCutoffWarningDays * 24 * 60 * 60 * 1000);
+
+  for (const row of dividendRows) {
+    const key = buildDividendKey(row);
+    const entryState = dividendState[key] ?? {};
+    const distributionText = formatDistribution(row);
+
+    if (!entryState.newAlerted) {
+      opportunities.push({
+        type: "dividend_new",
+        symbol: row.Symbol,
+        name: row.LongNameAr,
+        message: `إعلان توزيعات جديد: ${distributionText}${row.CutoffDate1 ? ` (تاريخ الاستحقاق ${row.CutoffDate1})` : ""}`,
+      });
+      entryState.newAlerted = true;
+    }
+
+    const cutoffDate = row.CutoffDate1 ? new Date(row.CutoffDate1) : null;
+    if (
+      cutoffDate &&
+      Number.isFinite(cutoffDate.getTime()) &&
+      cutoffDate >= now &&
+      cutoffDate <= warningCutoff &&
+      !entryState.cutoffAlerted
+    ) {
+      opportunities.push({
+        type: "dividend_cutoff_soon",
+        symbol: row.Symbol,
+        name: row.LongNameAr,
+        message: `تاريخ استحقاق التوزيعات (${distributionText}) يقترب: ${row.CutoffDate1} — يجب تملّك السهم قبل هذا التاريخ للاستفادة`,
+      });
+      entryState.cutoffAlerted = true;
+    }
+
+    dividendState[key] = entryState;
   }
 
   return opportunities;

@@ -4,6 +4,8 @@ const TYPE_LABELS = {
   breakout_high: "كسر أعلى",
   breakout_low: "كسر أدنى",
   financial_result: "نتائج مالية",
+  dividend_new: "توزيعات جديدة",
+  dividend_cutoff_soon: "استحقاق قريب",
 };
 
 const TYPE_HELP = {
@@ -12,6 +14,8 @@ const TYPE_HELP = {
   breakout_high: "أعلى سعر إغلاق خلال آخر 20 جلسة.",
   breakout_low: "أدنى سعر إغلاق خلال آخر 20 جلسة.",
   financial_result: "تغيّر كبير (30%+) في الأرباح الفصلية مقارنة بالفترة السابقة.",
+  dividend_new: "إعلان توزيعات أرباح جديد لهذه الشركة (نقدي و/أو أسهم منحة).",
+  dividend_cutoff_soon: "تاريخ استحقاق التوزيعات خلال أسبوع — يجب تملّك السهم قبله للاستفادة.",
 };
 
 const state = {
@@ -87,9 +91,13 @@ function renderOpportunities() {
   });
 }
 
+const TECHNICAL_TYPES = new Set(["price_move", "volume_spike", "breakout_high", "breakout_low"]);
+const DIVIDEND_TYPES = new Set(["dividend_new", "dividend_cutoff_soon"]);
+
 function matchesFilter(type, filter) {
-  if (filter === "technical") return type !== "financial_result";
+  if (filter === "technical") return TECHNICAL_TYPES.has(type);
   if (filter === "financial") return type === "financial_result";
+  if (filter === "dividends") return DIVIDEND_TYPES.has(type);
   return true;
 }
 

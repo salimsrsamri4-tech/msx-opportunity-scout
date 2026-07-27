@@ -2,7 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getActiveCompanies } from "./companies.js";
 import { getSnapshot } from "./snapshot.js";
-import { fetchFinancialResults, sleep } from "./msxApi.js";
+import { fetchFinancialResults, fetchDividends, sleep } from "./msxApi.js";
 import {
   loadHistory,
   saveHistory,
@@ -11,8 +11,14 @@ import {
   saveCompaniesSnapshot,
   appendOpportunitiesLog,
   saveMeta,
+  loadDividendState,
+  saveDividendState,
 } from "./store.js";
-import { evaluateTechnicalOpportunities, evaluateFinancialOpportunities } from "./rules.js";
+import {
+  evaluateTechnicalOpportunities,
+  evaluateFinancialOpportunities,
+  evaluateDividendOpportunities,
+} from "./rules.js";
 import { sendTelegramMessage } from "./notify.js";
 import { sendEmail } from "./notifyEmail.js";
 
@@ -21,6 +27,7 @@ const HISTORY_PATH = path.join(__dirname, "..", "data", "history.json");
 const COMPANIES_PATH = path.join(__dirname, "..", "data", "companies.json");
 const OPPORTUNITIES_PATH = path.join(__dirname, "..", "data", "opportunities.json");
 const META_PATH = path.join(__dirname, "..", "data", "meta.json");
+const DIVIDEND_STATE_PATH = path.join(__dirname, "..", "data", "dividendState.json");
 const REQUEST_DELAY_MS = 300; // تهدئة معدل الطلبات تجاه موقع البورصة
 
 function todayMuscatDate() {
@@ -52,12 +59,12 @@ async function collectSnapshotsAndTechnicalOpportunities(companies, history, tod
   return { opportunities, failures };
 }
 
-function formatReport(technical, financial, failures) {
+function formatReport(technical, financial, dividends, failures) {
   const lines = [];
   lines.push(`رصد فرص بورصة مسقط - ${todayMuscatDate()}`);
   lines.push("");
 
-  if (technical.length === 0 && financial.length === 0) {
+  if (technical.length === 0 && financial.length === 0 && dividends.length === 0) {
     lines.push("لا توجد فرص لافتة اليوم وفق المعايير الحالية.");
   } else {
     if (technical.length > 0) {
@@ -68,6 +75,11 @@ function formatReport(technical, financial, failures) {
     if (financial.length > 0) {
       lines.push("نتائج مالية لافتة:");
       for (const o of financial) lines.push(`• [${o.symbol}] ${o.name}: ${o.message}`);
+      lines.push("");
+    }
+    if (dividends.length > 0) {
+      lines.push("توزيعات أرباح:");
+      for (const o of dividends) lines.push(`• [${o.symbol}] ${o.name}: ${o.message}`);
     }
   }
 
@@ -102,14 +114,24 @@ async function main() {
     console.warn("تعذّر جلب النتائج المالية:", err.message);
   }
 
-  appendOpportunitiesLog(OPPORTUNITIES_PATH, today, [...technical, ...financial]);
+  let dividends = [];
+  const dividendState = loadDividendState(DIVIDEND_STATE_PATH);
+  try {
+    const dividendRows = await fetchDividends(Number(today.slice(0, 4)));
+    dividends = evaluateDividendOpportunities(dividendRows, dividendState);
+    saveDividendState(DIVIDEND_STATE_PATH, dividendState);
+  } catch (err) {
+    console.warn("تعذّر جلب بيانات توزيعات الأرباح:", err.message);
+  }
+
+  appendOpportunitiesLog(OPPORTUNITIES_PATH, today, [...technical, ...financial, ...dividends]);
   saveMeta(META_PATH, {
     lastRunDate: today,
     lastRunAt: new Date().toISOString(),
     activeCompanyCount: companies.length,
   });
 
-  const report = formatReport(technical, financial, failures);
+  const report = formatReport(technical, financial, dividends, failures);
   console.log("\n" + report);
 
   let sent = false;
