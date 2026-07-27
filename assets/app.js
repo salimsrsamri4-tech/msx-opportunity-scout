@@ -328,11 +328,71 @@ function buildChartSvg(entries) {
     </svg>`;
 }
 
+const WEEKLY_WINDOW_DAYS = 7;
+const WEEKLY_TOP_N = 5;
+
+function computeWeeklyMovers() {
+  const now = new Date();
+  const windowStart = new Date(now.getTime() - WEEKLY_WINDOW_DAYS * 24 * 60 * 60 * 1000);
+  const movers = [];
+
+  for (const [symbol, entries] of Object.entries(state.history)) {
+    const sorted = [...entries].sort((a, b) => (a.date < b.date ? -1 : 1));
+    const inWindow = sorted.filter((e) => new Date(e.date) >= windowStart);
+    if (inWindow.length < 2) continue;
+    const first = inWindow[0];
+    const last = inWindow[inWindow.length - 1];
+    if (!first.close || !last.close) continue;
+    const changePct = ((last.close - first.close) / first.close) * 100;
+    if (!Number.isFinite(changePct)) continue;
+    movers.push({ symbol, changePct, latest: last.close });
+  }
+
+  movers.sort((a, b) => b.changePct - a.changePct);
+  return {
+    gainers: movers.slice(0, WEEKLY_TOP_N),
+    losers: movers.slice(-WEEKLY_TOP_N).reverse().filter((m) => m.changePct < 0),
+  };
+}
+
+function renderMoverList(movers) {
+  if (movers.length === 0) return '<div class="empty-state">لا توجد بيانات كافية بعد.</div>';
+  return movers
+    .map(
+      (m) => `
+      <div class="mover-row" data-symbol="${m.symbol}">
+        <span class="opp-symbol" data-symbol="${m.symbol}">${m.symbol}</span>
+        <span class="mover-name">${escapeHtml(state.companies[m.symbol]?.nameAr ?? "")}</span>
+        <span class="change ${m.changePct >= 0 ? "up" : "down"}">${m.changePct >= 0 ? "▲" : "▼"} ${Math.abs(m.changePct).toFixed(2)}%</span>
+      </div>`
+    )
+    .join("");
+}
+
+function renderWeeklyMovers() {
+  const { gainers, losers } = computeWeeklyMovers();
+  const holder = document.getElementById("weekly-movers");
+  holder.innerHTML = `
+    <div class="mover-col">
+      <h3>📈 الأكثر ارتفاعًا</h3>
+      ${renderMoverList(gainers)}
+    </div>
+    <div class="mover-col">
+      <h3>📉 الأكثر انخفاضًا</h3>
+      ${renderMoverList(losers)}
+    </div>
+  `;
+  holder.querySelectorAll(".opp-symbol").forEach((el) => {
+    el.addEventListener("click", () => selectCompany(el.dataset.symbol));
+  });
+}
+
 async function init() {
   await loadData();
   renderMeta();
   renderOpportunities();
   renderCompanyPanel();
+  renderWeeklyMovers();
   setupFilters();
   setupSearch();
 }

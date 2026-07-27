@@ -181,6 +181,45 @@ header.top h1 {
   padding: 16px;
 }
 
+.wrap > .card {
+  margin-bottom: 20px;
+}
+
+.mover-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .mover-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.mover-col h3 {
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+  color: var(--text-dim);
+}
+
+.mover-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mover-row:last-child { border-bottom: none; }
+
+.mover-name {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card h2 {
   font-size: 1.05rem;
   margin: 0 0 12px;
