@@ -246,5 +246,11 @@
   },
   "SUWP|2026|<= 7.5%|-|DEC 2026  **": {
     "newAlerted": true
+  },
+  "OMRF|2026| 1.6%|-|Aug 09, 2026": {
+    "newAlerted": true
+  },
+  "PHPC|2026| 8.1%|-|JULY 2026 **": {
+    "newAlerted": true
   }
 }
