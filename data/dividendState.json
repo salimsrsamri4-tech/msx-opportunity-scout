@@ -248,7 +248,8 @@
     "newAlerted": true
   },
   "OMRF|2026| 1.6%|-|Aug 09, 2026": {
-    "newAlerted": true
+    "newAlerted": true,
+    "cutoffAlerted": true
   },
   "PHPC|2026| 8.1%|-|JULY 2026 **": {
     "newAlerted": true
