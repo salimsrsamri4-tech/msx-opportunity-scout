@@ -18,6 +18,14 @@ async function postJson(path, body = {}) {
   return json.d;
 }
 
+async function getJson(path) {
+  const res = await fetch(`${BASE_URL}${path}`, {
+    headers: { "User-Agent": USER_AGENT },
+  });
+  if (!res.ok) throw new Error(`MSX API فشل: ${path} -> ${res.status}`);
+  return res.json();
+}
+
 export function fetchCompaniesList() {
   return postJson("/companies.aspx/List");
 }
@@ -32,6 +40,10 @@ export function fetchFinancialResults() {
 
 export function fetchDividends(year) {
   return postJson("/dividends.aspx/MasterList", { Year: year });
+}
+
+export function fetchCompanyNews(symbol, year, month) {
+  return getJson(`/company-news.aspx?s=${symbol}&y=${year}&f=${month}&t=${month}&i=`);
 }
 
 export function sleep(ms) {

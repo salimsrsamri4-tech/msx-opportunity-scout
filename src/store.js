@@ -75,3 +75,14 @@ export function loadDividendState(filePath) {
 export function saveDividendState(filePath, state) {
   saveJson(filePath, state);
 }
+
+const MAX_SEEN_NEWS_IDS = 5000;
+
+export function loadSeenNewsIds(filePath) {
+  return new Set(loadJson(filePath, []));
+}
+
+export function saveSeenNewsIds(filePath, seenSet) {
+  const trimmed = [...seenSet].slice(-MAX_SEEN_NEWS_IDS);
+  saveJson(filePath, trimmed);
+}

@@ -21,6 +21,8 @@
   --badge-dividend-text: #0f766e;
   --badge-cutoff-bg: #ffe4d5;
   --badge-cutoff-text: #9a3412;
+  --badge-ai-bg: #e0e7ff;
+  --badge-ai-text: #3730a3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +49,8 @@
     --badge-dividend-text: #5eead4;
     --badge-cutoff-bg: #4a2a12;
     --badge-cutoff-text: #fdba74;
+    --badge-ai-bg: #2a2a5c;
+    --badge-ai-text: #a5b4fc;
   }
 }
 
@@ -343,6 +347,7 @@ header.top h1 {
 .badge.financial_result { background: var(--badge-financial-bg); color: var(--badge-financial-text); }
 .badge.dividend_new { background: var(--badge-dividend-bg); color: var(--badge-dividend-text); }
 .badge.dividend_cutoff_soon { background: var(--badge-cutoff-bg); color: var(--badge-cutoff-text); }
+.badge.ai_disclosure { background: var(--badge-ai-bg); color: var(--badge-ai-text); }
 
 .opp-msg { font-size: 0.9rem; color: var(--text); }
 .opp-name { font-size: 0.8rem; color: var(--text-dim); }

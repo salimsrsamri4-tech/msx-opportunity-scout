@@ -6,6 +6,7 @@ const TYPE_LABELS = {
   financial_result: "نتائج مالية",
   dividend_new: "توزيعات جديدة",
   dividend_cutoff_soon: "استحقاق قريب",
+  ai_disclosure: "إفصاح لافت (AI)",
 };
 
 const TYPE_HELP = {
@@ -16,6 +17,7 @@ const TYPE_HELP = {
   financial_result: "تغيّر كبير (30%+) في الأرباح الفصلية مقارنة بالفترة السابقة.",
   dividend_new: "إعلان توزيعات أرباح جديد لهذه الشركة (نقدي و/أو أسهم منحة).",
   dividend_cutoff_soon: "تاريخ استحقاق التوزيعات خلال أسبوع — يجب تملّك السهم قبله للاستفادة.",
+  ai_disclosure: "إفصاح نصي قرأه الذكاء الاصطناعي وقيّمه كمهم (تغيير إداري، استحواذ، قضية قانونية...).",
 };
 
 const WATCHLIST_KEY = "msx-scout-watchlist";
@@ -133,6 +135,7 @@ function matchesFilter(type, filter) {
   if (filter === "technical") return TECHNICAL_TYPES.has(type);
   if (filter === "financial") return type === "financial_result";
   if (filter === "dividends") return DIVIDEND_TYPES.has(type);
+  if (filter === "ai") return type === "ai_disclosure";
   return true;
 }
 
