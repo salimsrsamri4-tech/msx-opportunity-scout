@@ -261,13 +261,15 @@
     "newAlerted": true
   },
   "PRFD|2026| 5.5%|-|Aug 31, 2026": {
-    "newAlerted": true
+    "newAlerted": true,
+    "cutoffAlerted": true
   },
   "OQEP|2026| 96.3%|-|Nov 25, 2026": {
     "newAlerted": true
   },
   "OQEP|2026| 96.3%|-|Aug 31, 2026": {
-    "newAlerted": true
+    "newAlerted": true,
+    "cutoffAlerted": true
   },
   "OQBI|2026| 19.5%|-|2026 **": {
     "newAlerted": true
