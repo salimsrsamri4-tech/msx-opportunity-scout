@@ -1,0 +1,27 @@
+name: ملخص أسبوعي لقائمة المتابعة
+
+on:
+  schedule:
+    # الخميس 10:30 بتوقيت UTC = 14:30 بتوقيت مسقط (بعد آخر تشغيل يومي لهذا الأسبوع)
+    - cron: "30 10 * * 4"
+  workflow_dispatch: {}
+
+jobs:
+  weekly-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - run: npm install
+
+      - run: node src/weeklyDigest.js
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}

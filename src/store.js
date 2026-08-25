@@ -47,6 +47,10 @@ export function saveCompaniesSnapshot(filePath, companies) {
   saveJson(filePath, map);
 }
 
+export function loadCompaniesSnapshot(filePath) {
+  return loadJson(filePath, {});
+}
+
 function opportunityKey(o) {
   return `${o.date}|${o.symbol}|${o.type}`;
 }
@@ -85,4 +89,12 @@ export function loadSeenNewsIds(filePath) {
 export function saveSeenNewsIds(filePath, seenSet) {
   const trimmed = [...seenSet].slice(-MAX_SEEN_NEWS_IDS);
   saveJson(filePath, trimmed);
+}
+
+export function loadOpportunitiesLog(filePath) {
+  return loadJson(filePath, []);
+}
+
+export function loadWatchlist(filePath) {
+  return loadJson(filePath, []);
 }

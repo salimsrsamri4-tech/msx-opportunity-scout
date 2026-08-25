@@ -238,9 +238,20 @@ function renderCompanyPanel() {
           </div>`;
         })
         .join("")}
+      <button class="copy-watchlist-btn" id="copy-watchlist-btn">📋 انسخ القائمة لتفعيل الملخص الأسبوعي بالبريد</button>
+      <p class="disclaimer" id="copy-watchlist-hint">الصق هذا في ملف <code>data/watchlist.json</code> على GitHub لتشغيل الملخص الأسبوعي المخصص لهذه الشركات.</p>
     `;
     panel.querySelectorAll(".opp-symbol").forEach((el) => {
       el.addEventListener("click", () => selectCompany(el.dataset.symbol));
+    });
+    document.getElementById("copy-watchlist-btn").addEventListener("click", async () => {
+      const json = JSON.stringify(watchlist);
+      try {
+        await navigator.clipboard.writeText(json);
+        document.getElementById("copy-watchlist-btn").textContent = "✅ تم النسخ!";
+      } catch {
+        document.getElementById("copy-watchlist-hint").textContent = json;
+      }
     });
     return;
   }
