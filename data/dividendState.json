@@ -239,7 +239,8 @@
     "newAlerted": true
   },
   "MSPW|2026| 13.8%|-|SEP 2026 **": {
-    "newAlerted": true
+    "newAlerted": true,
+    "cutoffAlerted": true
   },
   "PHPC|2026|<= 8.1%|-|JULY 2026 **": {
     "newAlerted": true
