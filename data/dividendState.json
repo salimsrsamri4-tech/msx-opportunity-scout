@@ -275,5 +275,9 @@
   },
   "OQBI|2026| 19.5%|-|2026 **": {
     "newAlerted": true
+  },
+  "JREF|2026| 1.852%|-|Sep 03, 2026": {
+    "newAlerted": true,
+    "cutoffAlerted": true
   }
 }
