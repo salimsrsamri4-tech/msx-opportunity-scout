@@ -279,5 +279,8 @@
   "JREF|2026| 1.852%|-|Sep 03, 2026": {
     "newAlerted": true,
     "cutoffAlerted": true
+  },
+  "JREF|2026| 1.825%|-|Sep 03, 2026": {
+    "newAlerted": true
   }
 }
