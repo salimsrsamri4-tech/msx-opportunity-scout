@@ -282,5 +282,11 @@
   },
   "JREF|2026| 1.825%|-|Sep 03, 2026": {
     "newAlerted": true
+  },
+  "OCCI|2026| 5%|-|Sep 15, 2026": {
+    "newAlerted": true
+  },
+  "OCCI|2026| 5%|10%|Mar 31, 2026": {
+    "newAlerted": true
   }
 }
