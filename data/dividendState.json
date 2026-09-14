@@ -292,5 +292,11 @@
   },
   "OMIF|2026| 42%|-|30 Sep 2026 **": {
     "newAlerted": true
+  },
+  "OMIF|2026| 42%|-|Sep 30, 2026": {
+    "newAlerted": true
+  },
+  "MSPW|2026| 13.8%|-|Sep 13, 2026": {
+    "newAlerted": true
   }
 }
